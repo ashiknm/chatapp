@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from transformers import pipeline
 
 app = Flask(__name__)
 
@@ -8,14 +9,14 @@ def hello():
 
 # summarizer = BartForConditionalGeneration.from_pretrained('facebook/bart-large')
 # model = BertModel.from_pretrained("./test/saved_model/")
-# summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+# from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-tokenizer = AutoTokenizer.from_pretrained("lidiya/bart-large-xsum-samsum")
+# tokenizer = AutoTokenizer.from_pretrained("lidiya/bart-large-xsum-samsum")
 
-summarizer = AutoModelForSeq2SeqLM.from_pretrained("lidiya/bart-large-xsum-samsum")
+# summarizer = AutoModelForSeq2SeqLM.from_pretrained("lidiya/bart-large-xsum-samsum")
 
 # from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
